@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment"
+    android:background="@android:color/transparent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/introText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="10sp"
+            android:text="안녕하세요!\n오늘의 유통기한을 안내합니다"
+            android:textColor="#000000"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20sp"
+        android:gravity="bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:layout_weight="1">
+            <RelativeLayout
+                android:id="@+id/relative_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/freezeBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="bottom|center_horizontal"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/freezeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/relative_layout1"
+                android:layout_centerHorizontal="true"
+                android:text="냉동"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/freezeCount"
+                android:layout_width="15sp"
+                android:layout_height="15sp"
+                android:background="@drawable/red_cricle"
+                android:layout_alignBaseline="@id/freezeText"
+                android:layout_toEndOf="@+id/freezeText"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:layout_weight="1">
+            <RelativeLayout
+                android:id="@+id/relative_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/fridgeBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="bottom|center_horizontal"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/fridgeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/relative_layout2"
+                android:layout_centerHorizontal="true"
+                android:text="냉장"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/fridgeCount"
+                android:layout_width="15sp"
+                android:layout_height="15sp"
+                android:background="@drawable/red_cricle"
+                android:layout_alignBaseline="@id/fridgeText"
+                android:layout_toEndOf="@+id/fridgeText"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:layout_weight="1">
+            <RelativeLayout
+                android:id="@+id/relative_layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/roomBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:gravity="bottom|center_horizontal" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/roomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/relative_layout3"
+                android:layout_centerHorizontal="true"
+                android:text="실온"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/roomCount"
+                android:layout_width="15sp"
+                android:layout_height="15sp"
+                android:background="@drawable/red_cricle"
+                android:layout_alignBaseline="@id/roomText"
+                android:layout_toEndOf="@+id/roomText"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/recyclerview_background"
+        android:paddingTop="25sp"
+        android:paddingBottom="6sp"
+        android:paddingHorizontal="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addlistBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/addlistbtn_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:fabSize="normal"
+        app:backgroundTint="@android:color/transparent"
+        app:useCompatPadding="true"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

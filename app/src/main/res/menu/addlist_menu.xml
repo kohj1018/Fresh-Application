@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <!-- 액션 버튼으로써 나타나는 "검색" 아이템  -->
+    <item
+        android:id="@+id/saveBtn"
+        android:title="저장"
+        app:showAsAction="always" />
+
+</menu>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity"
+    android:background="#F3F4F2">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/toolbar_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="냉장고 정리 도우미"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6sp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/detail_textName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="당근"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detail_textDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2021.01.31" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/detail_textDday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="D-7"
+                    android:textColor="#E84646"
+                    android:textSize="60sp" />
+
+                <TextView
+                    android:id="@+id/detail_textRemain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="00일 00시간 00분 00초전" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30sp">
+
+            <TextView
+                android:layout_width="100sp"
+                android:layout_height="30sp"
+                android:gravity="center"
+                android:text="위치"
+                android:textSize="25sp"
+                android:background="@drawable/infobtn_background"/>
+
+            <TextView
+                android:id="@+id/detail_textLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="냉동"
+                android:textSize="25sp"
+                android:layout_marginLeft="20sp"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6sp">
+
+            <TextView
+                android:layout_width="100sp"
+                android:layout_height="30sp"
+                android:gravity="center"
+                android:text="분류"
+                android:textSize="25sp"
+                android:background="@drawable/infobtn_background"/>
+
+            <TextView
+                android:id="@+id/detail_textCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="floor 1"
+                android:textSize="25sp"
+                android:layout_marginLeft="20sp"/>
+        </TableRow>
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

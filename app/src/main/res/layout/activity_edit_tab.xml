@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditTabActivity"
+    android:background="#F3F4F2">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/toolbar_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카테고리 추가/삭제"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="8dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <CheckBox
+            android:id="@+id/editTabfreezeCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="냉동" />
+
+        <CheckBox
+            android:id="@+id/editTabfridgeCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="냉장" />
+
+        <CheckBox
+            android:id="@+id/editTabroomCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="실온" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9sp"
+        android:padding="6sp"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="100sp"
+                android:layout_height="30sp"
+                android:gravity="center"
+                android:text="추가"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/infobtn_background" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/editTabNameText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:ems="10"
+                    android:hint="@string/edittext_hint"
+                    android:inputType="textPersonName"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/addTabBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="30sp"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:gravity="center"
+                    android:background="@drawable/inputbtn_background"/>
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10sp">
+
+            <TextView
+                android:layout_width="100sp"
+                android:layout_height="30sp"
+                android:gravity="center"
+                android:text="삭제"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/infobtn_background" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/editTabSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:layout_gravity="center"/>
+
+                <Button
+                    android:id="@+id/delTabBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="30sp"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"
+                    android:background="@drawable/inputbtn_background"/>
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
