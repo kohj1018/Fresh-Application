@@ -27,6 +27,10 @@ class MainFragment : Fragment() {
         mainFragContext = context   // Root Activity에 접근할 경우 context as Activity 를 이용
     }
 
+    // RecyclerView에 넣을 때 쓰는 데이터 변수를 클래스 변수로 선언
+    var data = mutableListOf<Memo>()
+
+    // RecyclerView의 어댑터 변수도 클래스 변수로 선언
     var adapter: CustomAdapter? = null
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -118,13 +122,12 @@ class MainFragment : Fragment() {
         //*************************************************************//
         //
         // 1. 데이터 로딩
-        var data = loadAllData()
+        data = loadAllData()
         data = dataSort(data)
         // 2. 어댑터 생성
         adapter = CustomAdapter(mainFragContext as MainActivity, false)
         // 3. 어댑터에 데이터 전달
         adapter!!.setData(data) // setData : search 기능 이용시 사용하는 함수. MainActivity에만 search기능이 있기때문에 여기서만 data을 이렇게 준다. listDataFilter에도 데이터를 한번에 넣어주기 위해 편의상 만든 거
-        adapter!!.notifyDataSetChanged()
         // 4. 화면에 있는 리사이클러뷰에 어댑터 연결
         mainFragViewOfLayout.mainRecyclerView.adapter = adapter
         // 5. 레이아웃 매니저 연결
@@ -215,5 +218,17 @@ class MainFragment : Fragment() {
         }
 
         return data
+    }
+
+    // 어댑터 갱신 함수
+    fun refreshAdapter() {
+        mainFragViewOfLayout.freezeCount.text = dataSize("freeze").toString()
+        mainFragViewOfLayout.fridgeCount.text = dataSize("fridge").toString()
+        mainFragViewOfLayout.roomCount.text = dataSize("room").toString()
+
+        data = loadAllData()
+        data = dataSort(data)
+        adapter?.setData(data)
+        adapter?.notifyDataSetChanged()
     }
 }

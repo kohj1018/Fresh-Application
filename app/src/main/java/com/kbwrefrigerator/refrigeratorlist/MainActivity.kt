@@ -63,18 +63,9 @@ class MainActivity : AppCompatActivity() {
         // 현재 프래그먼트를 구해서 만약 레시피 프래그먼트면 새로고침 안함
         var currentFragment = supportFragmentManager.findFragmentById(R.id.mainContainer)
         if (currentFragment !is RecipeFragment && currentFragment !is SettingFragment) {
-            refresh()
+            fragmentMain.refreshAdapter()
         }
     }
-
-    // 액티비티 새로고침 함수
-    fun refresh() {
-        val refreshIntent = getIntent()
-        refreshIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-        finish()
-        startActivity(refreshIntent)
-    }
-
 
 
 }
